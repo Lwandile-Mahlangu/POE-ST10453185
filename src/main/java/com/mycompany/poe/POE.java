@@ -1,8 +1,8 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
 package com.mycompany.poe;
+
 import java.util.Scanner;
 
 /**
@@ -11,14 +11,15 @@ import java.util.Scanner;
  */
 public class POE {
 
-
     public static void main(String[] args) {
         //Declaration
-        
+
         Scanner scanner = new Scanner(System.in);
-        
-          registerUser second = new registerUser();
-        
+
+//          registerUser second = new registerUser();
+        registerUser myregisterUserObj = new registerUser();
+        myregisterUserObj.validateUsername();
+
         // Input username and password
         System.out.println("Enter Username: ");
         String username = scanner.nextLine();
@@ -33,6 +34,5 @@ public class POE {
         System.out.println("Enter Last Name: ");
         String lastName = scanner.nextLine();
 
-      
     }
 }

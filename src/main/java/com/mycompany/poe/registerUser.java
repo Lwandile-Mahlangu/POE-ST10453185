@@ -9,11 +9,28 @@ package com.mycompany.poe;
  * @author RC_Student_lab
  */
 public class registerUser {
-    String firstName;
-    String lastName;
-    String username;
-    String password;
+   private String firstName;
+   private String lastName;
+    private String username;
+   private String password;
    
+   
+      
+   //Getters
+   public String getUsername(){
+       return username;
+   }
+    public String getPassword(){
+       return password;
+    }
+    public String getFirstName(){
+       return firstName;
+    }
+     
+    public String getLastName(){
+       return lastName;
+    }
+    
     // Function to validate username
     public static String validateUsername(String username) {
         if (username.contains("_") && username.length() <= 5) {
