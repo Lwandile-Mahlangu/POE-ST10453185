@@ -54,7 +54,7 @@ public class registerUser {
             System.out.println("Password successfully captured.");
             return true;
         } else {
-            System.out.println(" \"Password is not correctly formatted, please ensure that the password contains at least 8 characters, a capital letter, a number, and a special character.");
+            System.out.println("Password is not correctly formatted, please ensure that the password contains at least 8 characters, a capital letter, a number, and a special character.");
             
             return false;
         }
