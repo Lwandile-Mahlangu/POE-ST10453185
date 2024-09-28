@@ -4,35 +4,49 @@
 package com.mycompany.poe;
 
 import java.util.Scanner;
-
 /**
  *
  * @author RC_Student_lab
  */
 public class POE {
-
+   
     public static void main(String[] args) {
         //Declaration
-
-        Scanner scanner = new Scanner(System.in);
-
-//          registerUser second = new registerUser();
-        registerUser myregisterUserObj = new registerUser();
-        myregisterUserObj.validateUsername();
-
-        // Input username and password
-        System.out.println("Enter Username: ");
+        
+       Scanner scanner = new Scanner(System.in);
+        registerUser user = new registerUser();
+        
+        System.out.println("=== User Registration ===");
+        
+        // Input for registration details
+        System.out.print("Enter username (must contain an underscore and be no more than 5 characters): ");
         String username = scanner.nextLine();
 
-        System.out.println("Enter Password: ");
+        System.out.print("Enter password (must be at least 8 characters, contain a capital letter, a number, and a special character): ");
         String password = scanner.nextLine();
 
-        // Input first name and last name for login greeting
-        System.out.println("Enter First Name: ");
+        System.out.print("Enter first name: ");
         String firstName = scanner.nextLine();
 
-        System.out.println("Enter Last Name: ");
+        System.out.print("Enter last name: ");
         String lastName = scanner.nextLine();
 
+        // Register the user
+        String registrationMessage = user.registerUser(username, password, firstName, lastName);
+        System.out.println(registrationMessage);
+
+        // Only proceed to login if registration was successful
+        if (registrationMessage.equals("User registration successful!")) {
+            System.out.println("\n=== User Login ===");
+            System.out.print("Enter username: ");
+            String loginUsername = scanner.nextLine();
+
+            System.out.print("Enter password: ");
+            String loginPassword = scanner.nextLine();
+
+            // Display the login status message
+            String loginMessage = user.returnLoginStatus(loginUsername, loginPassword);
+            System.out.println(loginMessage);
+        }
     }
 }
